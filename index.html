@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pennywise — Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">₹</span> Pennywise</a>
+      <span class="tag">STUDENT MONEY TRACKER</span>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">YOUR MONEY, MADE CLEAR</p>
+        <h1>Spend with a little<br><span>more intention.</span></h1>
+        <p class="subhead">Keep track of where your money goes.</p>
+      </div>
+      <p class="hero-note">✳ Small steps add up.<br><strong>You’ve got this.</strong></p>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card total-card">
+        <span class="stat-label">TOTAL THIS MONTH</span>
+        <strong id="month-total">₹0.00</strong>
+        <span class="stat-foot" id="expense-count">0 expenses recorded</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">BIGGEST CATEGORY</span>
+        <strong class="category-value" id="biggest-category">—</strong>
+        <span class="stat-foot" id="biggest-total">Add an expense to begin</span>
+      </article>
+    </section>
+
+    <div class="content-grid">
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">YOUR ACTIVITY</p>
+            <h2>Recent expenses</h2>
+          </div>
+          <label class="month-label">
+            Month
+            <input id="month-picker" type="month">
+          </label>
+        </div>
+
+        <div class="filters" id="filters"></div>
+        <div id="expense-list"></div>
+      </section>
+
+      <aside class="panel form-panel">
+        <p class="eyebrow">A LITTLE ACCOUNTABILITY</p>
+        <h2>Add an expense</h2>
+        <p class="form-intro">It only takes a moment.</p>
+
+        <form id="expense-form">
+          <label>
+            What was it for?
+            <input name="title" required maxlength="80"
+                   placeholder="e.g. Lunch with friends">
+          </label>
+
+          <div class="form-row">
+            <label>
+              Amount (₹)
+              <input name="amount" required type="number" min="0.01"
+                     step="0.01" placeholder="0.00">
+            </label>
+            <label>
+              Date
+              <input name="date" required type="date">
+            </label>
+          </div>
+
+          <label>
+            Category
+            <select name="category">
+              <option>Food</option>
+              <option>Travel</option>
+              <option>Study</option>
+              <option>Bills</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>
+            A note <span class="optional">(optional)</span>
+            <input name="note" maxlength="200"
+                   placeholder="Anything you want to remember?">
+          </label>
+
+          <button class="submit" type="submit">Add expense ↗</button>
+        </form>
+
+        <p class="privacy">Saved in this browser on this device.</p>
+      </aside>
+    </div>
+
+    <footer>Your next good money habit starts here ✳</footer>
+  </main>
+</body>
+</html>
